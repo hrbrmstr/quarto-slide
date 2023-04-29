@@ -1,0 +1,27 @@
+# Slide
+
+For this one, we give `faithful` to Observable and have it display a histogram based on the # of selected bins.
+
+```{r}
+ojs_define(faithfulR = faithful)
+```
+
+```{ojs}
+faithful = transpose(faithfulR)
+```
+
+```{ojs}
+viewof bins = Inputs.range([1, 50], { label: "Number of bins", step: 1 })
+```
+
+```{ojs}
+Plot.plot({
+	marks: [
+		Plot.rectY(
+			faithful,
+			Plot.binX({ y: "count" }, { x: "eruptions", thresholds: bins })
+		),
+		Plot.ruleY([0]),
+	],
+});
+```

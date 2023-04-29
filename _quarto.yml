@@ -1,0 +1,17 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "quarto-slide"
+  author: "hrbrmstr"
+  date: "2023-04-29"
+  chapters:
+    - index.qmd
+    - select.qmd
+    - slide.qmd
+
+format:
+  html:
+    theme: cosmo
+    code-fold: true

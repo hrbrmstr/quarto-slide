@@ -1,0 +1,29 @@
+# Select Menu
+
+For this one, we give `mtcars` to Observable and let it plot based on the # of selected cylinders.
+
+```{r}
+ojs_define(mtcarsR = mtcars)
+```
+
+```{ojs}
+mtcars = transpose(mtcarsR)
+```
+
+```{ojs}
+viewof cylSelect = Inputs.select(d3.sort([...new Set(mtcars.map((d) => d.cyl))]), {
+  label: "Select # Cylinders"
+})
+```
+
+```{ojs}
+Plot.plot({
+	marks: [
+		Plot.dot(
+			mtcars.filter((d) => d.cyl == cylSelect),
+			{ x: "wt", y: "mpg" }
+		),
+	],
+});
+```
+

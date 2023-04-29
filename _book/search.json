@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "quarto-slide",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Select Menu",
+    "section": "",
+    "text": "Show the code\nmtcars = transpose(mtcarsR)\n\n\n\n\n\n\n\n\n\nShow the code\nviewof cylSelect = Inputs.select(d3.sort([...new Set(mtcars.map((d) =&gt; d.cyl))]), {\n  label: \"Select # Cylinders\"\n})\n\n\n\n\n\n\n\n\n\nShow the code\nPlot.plot({\n    marks: [\n        Plot.dot(\n            mtcars.filter((d) =&gt; d.cyl == cylSelect),\n            { x: \"wt\", y: \"mpg\" }\n        ),\n    ],\n});"
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "slide.html",
+    "href": "slide.html",
+    "title": "2  Slide",
+    "section": "",
+    "text": "Code\nojs_define(faithfulR = faithful)\n\n\n\n\nCode\nfaithful = transpose(faithfulR)\n\n\n\n\n\n\n\n\n\nCode\nviewof bins = Inputs.range([1, 50], { label: \"Number of bins\", step: 1 })\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n    marks: [\n        Plot.rectY(\n            faithful,\n            Plot.binX({ y: \"count\" }, { x: \"eruptions\", thresholds: bins })\n        ),\n        Plot.ruleY([0]),\n    ],\n});"
+  },
+  {
+    "objectID": "select.html",
+    "href": "select.html",
+    "title": "1  Select Menu",
+    "section": "",
+    "text": "Code\nmtcars = transpose(mtcarsR)\n\n\n\n\n\n\n\n\n\nCode\nviewof cylSelect = Inputs.select(d3.sort([...new Set(mtcars.map((d) =&gt; d.cyl))]), {\n  label: \"Select # Cylinders\"\n})\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n    marks: [\n        Plot.dot(\n            mtcars.filter((d) =&gt; d.cyl == cylSelect),\n            { x: \"wt\", y: \"mpg\" }\n        ),\n    ],\n});"
+  }
+]

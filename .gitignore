@@ -1,0 +1,25 @@
+.DS_Store
+.idea
+*.RData
+*.Rproj
+*.Rhistory
+__pycache__/
+.Rproj.user
+tests/run-tests.sh
+package/dist/**
+/package/out
+/tests/cov_profile
+/tests/cov_profile.lcov
+/tests/test-out.json
+*~
+.env
+# deno_std library
+src/resources/deno_std/cache
+src/vendor-*
+
+# windows configuration file
+win_configuration.bat
+/package/pkg-working
+
+# generated javascript
+src/resources/preview/quarto-preview.js

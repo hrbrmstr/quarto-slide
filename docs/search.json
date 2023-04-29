@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "quarto-slide",
+    "section": "",
+    "text": "1 Select Menu And Slider"
+  },
+  {
+    "objectID": "select.html",
+    "href": "select.html",
+    "title": "2  Select Menu",
+    "section": "",
+    "text": "For this one, we give mtcars to Observable and let it plot based on the # of selected cylinders.\n\n\nCode\nojs_define(mtcarsR = mtcars)\n\n\n\n\nCode\nmtcars = transpose(mtcarsR)\n\n\n\n\n\n\n\n\n\nCode\nviewof cylSelect = Inputs.select(d3.sort([...new Set(mtcars.map((d) =&gt; d.cyl))]), {\n  label: \"Select # Cylinders\"\n})\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n    marks: [\n        Plot.dot(\n            mtcars.filter((d) =&gt; d.cyl == cylSelect),\n            { x: \"wt\", y: \"mpg\" }\n        ),\n    ],\n});"
+  },
+  {
+    "objectID": "slide.html",
+    "href": "slide.html",
+    "title": "3  Slide",
+    "section": "",
+    "text": "For this one, we give faithful to Observable and have it display a histogram based on the # of selected bins.\n\n\nCode\nojs_define(faithfulR = faithful)\n\n\n\n\nCode\nfaithful = transpose(faithfulR)\n\n\n\n\n\n\n\n\n\nCode\nviewof bins = Inputs.range([1, 50], { label: \"Number of bins\", step: 1 })\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n    marks: [\n        Plot.rectY(\n            faithful,\n            Plot.binX({ y: \"count\" }, { x: \"eruptions\", thresholds: bins })\n        ),\n        Plot.ruleY([0]),\n    ],\n});"
+  }
+]
